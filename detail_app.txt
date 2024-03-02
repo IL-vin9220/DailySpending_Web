@@ -1,0 +1,58 @@
+* font-end
+- tổng quan: trang đầu tiên khi đăng nhập, có bg image
+- địa điểm ưa thích: hiển thị ra vùng map có 20-40 địa điểm ưa thích, bên dưới có chú thích 5 địa điểm ưa thích nhiều nhất(phân biệt bằng màu sắc) và các địa điểm còn lại cùng màu (đang phát triển) - yêu cầu: cần app mobile
+- danh sách chi tiêu: bảng danh sách các: mã sản phẩm, tên sản phẩm, giá mua, phân loại sp, số lượng, ngày mua, thời điểm
+- quản lý hóa đơn: quản lý các hóa đơn( không thể xóa hóa đơn)
+	* có phân trang: mỗi ngày là 1 trang
+	* tính sau n ngày tiêu hết bao nhiêu tiền(trên-phải)
+	* hiển thị số ngày tiêu dùng: ngày tiêu dùng/tổng số ngày
+- biến động giá thành: chọn 1 sp trong loại sp, sẽ hiển thị thông tin form thông tin. chọn khoảng thời gian sẽ hiển thị ở biểu đồ đường, bên dưới: thông tin về ngày sản phẩm có giá cao nhất và thấp nhất, mặc định khi chọn vào sẽ hiển thị 10 sp có mức biến động cao nhất
+ngân sách: gồm thông tin: tổng ngân quỹ hiện có và mức tiêu theo từng ngày, có thể click để xem chi tiết
+- báo cáo tài chính: khi click sẽ hiện ra vùng tùy chọn ngày và các mức độ xem: ngày, tháng, năm. khi chọn xong sẽ tự động load dữ liệu vào vùng data(có phân trang). khi xem chi tiết báo cáo, sẽ hiện ra form hiển thị thông tin chi tiết bao gồm: mã báo cáo, tên báo cáo, ngày(từ->đâu: tháng, năm), tổng sp mua, tổng chi, số dư còn lại; bên dưới có bảng gồm 5 sản phẩm có giá cao nhất.
+	* thêm giao dịch sẽ đọc thông tin về phần dự tiết kiệm, nếu có trong tháng thì hiển thị, nếu ko có thì bỏ trống(ko bắt buộc)
+	* chọn lọc theo tháng, click vào icon 3 chấm sẽ hiển thị thông tin chi tiết của tháng đó: mã báo cáo, tên báo cáo, tổng sp mua, tổng chi, số ngày chi tiêu, tổng ngân quỹ, số dư cuối tháng; bên dưới có biểu đồ đường về 10 ngày có tổng chi tiêu cao nhất(sx theo ngày)
+- phân tích tài chính: (phân tích và dự đoán giá cả sản phẩm - ko có chức năng chia sẻ) - đang phát triển
+- taoQR: tạo mã QR để chia sẻ
+	* cấu trúc mã: https://quanlychitieu.com/<userID>/accesskey=<accesskey>
+	* accesskey: mã truy cập nội dung chia sẻ; mỗi mã accesskey chỉ ứng với 1 hoặc 1 nhóm bản ghi cùng loại duy nhất; dc mã hóa theo loại mã riêng
+- quetQR: đọc mã QR
+	* nếu mã QR có cấu trúc mã của website quanlychitieu.com thì thông tin lấy dc theo mã accesskey sẽ hiện trong form (thông tin chi tiết của bản ghi dc lấy theo accesskey; yêu cầu đăng nhập trước)
+	* nếu ko phải cấu trúc của website quanlychitieu.com thì sẽ hiển thị nội dung vào trong form
+- chiase: chia sẻ thông tin
+	* có 2 dạng chính: tạo mã QR và tạo file local
+	* tạo mã QR: có cấu trúc như trên và có chức năng: lưu về máy và chia sẻ
+	* tạo file local: 
+		- có 2 dạng chính: excel và pdf
+		- click chọn loại file ở bên trên <dạng checkbox>, bên dưới: chọn loại bảng, số lượng bản ghi, cột sx, sx(tăng; giảm), điều kiện lọc(mặc định là none; hover để hiển thị title là chi tiết cách đặt điều kiện lọc), có nút thêm bảng bên dưới mỗi lần chọn bảng lọc(nếu tên loại bảng ko có thì ko hiển thị nút thêm và ko cho thêm bảng lọc, nếu ở cuối thì bỏ qua ko xét)
+		- có chức năng lưu về máy và chia sẻ
+
+* back-end
+- quản lý tài khoản người dùng:
+	* bao gồm: mã tài khoản, tên tài khoản, mật khẩu, email đăng kí, số điện thoại
+	* chức năng:
+		- khóa tài khoản
+		- reset lại mật khẩu cho tài khoản
+	* hoạt động:
+		- khi hover vào 1 record bất kì, sẽ hiển thị ra icon khóa, icon reset và icon 3 chấm.
+		- Click vào icon khóa để khóa tài khoản, nếu đồng ý khóa, tài khoản sẽ bị khóa, không thể đăng nhập lại và thông tin sẽ được gửi quy email về cho user. Nếu muốn đăng nhập lại, user phải gửi yêu cầu cho admin và cần dc phê duyệt.
+		- Click vào icon reset, tài khoản sẽ được reset lại mật khẩu mặc định(123456) và gửi email về email đăng kí cho user đó
+		- Click vào icon 3 chấm để xem thông tin chi tiết của tài khoản đó: mã tài khoản, tên tài khoản, mật khẩu, email, số điện thoại, ngày đăng kí, tổng số lần truy cập, tổng số bản ghi
+- quản lý danh mục sản phẩm
+	* bao gồm: mã danh mục, tên danh mục, đơn vị
+	* chức năng:
+		- thêm danh mục
+		- sửa danh mục
+		- xóa danh mục
+	* hoạt động:
+		- khi click vào thêm sẽ hiển thị ra form: mã danh mục(tự động sinh), tên danh mục, đơn vị. Click "Thêm danh mục" để thêm danh mục.
+		- khi hover vào 1 record bất kì sẽ hiển thị ra icon chỉnh sửa. Click vào sửa(icon) sẽ hiển thị ra form: mã danh mục(ko thể sửa), tên danh mục, đơn vị. Click vào "Hoàn tất" để cập nhật lại thông tin danh mục
+		- khi click vào 1 record bất kì, sẽ tự động dc tick ở checkbox và hiển thị trên toolbar icon thùng rác. Click vào thùng rác để xóa danh mục. Nếu xác nhận xóa thì sẽ xóa danh mục
+- quản lý truy cập website
+	* bao gồm: mã tài khoản, tên tài khoản, mật khẩu, IP address, thành phố, thời điểm truy cập(tính bằng time có format hh:mm:ss), số lần cảnh báo
+	* chức năng:
+		- cảnh báo
+		- khóa tài khoản
+	* hoạt động:
+		- khi hover vào 1 record bất kì sẽ hiển thị ra icon cảnh báo và icon khóa.
+		- khi click vào icon cảnh báo sẽ hiển thị ra form: tên cảnh báo, nội dung cảnh báo, mức độ cảnh báo(dựa vào số lần cảnh báo: green: 1, yellowgreen: 2, orange: 3, red: 4), nếu ở mức độ 4, form sẽ hiển thị ra thêm 1 phần nhắc nhở: "Tài khoản <username> của bạn sẽ bị tạm khóa trong 48h vì đã bị cảnh báo 4 lần. Hãy đặt lại mật khẩu mạnh hơn và tuân thủ chính sách sử dụng sau khi tài khoản không còn bị khóa. Xin cảm ơn". Được gửi qua email, nếu số lần cảnh báo < 4, email sẽ có nút "Xác nhận" để xác nhận quyền sở hữu tài khoản. Nếu không xác nhận trong 48h, số lần cảnh báo tự tăng và tiếp tục, nếu xác nhận, tài khoản dc hoạt động bt.
+		- khi click vào icon khóa sẽ thực hiện như ở khóa tài khoản(quản lý tài khoản người dùng)

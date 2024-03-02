@@ -1,0 +1,26 @@
+user::format
+<user>
+	<username index=1>
+		<name></name>	
+		<password></password>
+	</username>
+	<username index=2>
+		<name></name>	
+		<password></password>
+	</username>
+</user>
+
+detail sp::format
+<detail_product>
+	<user_product index=1>
+		<month_product month="2" year="2024" tc="2.000.000" tk="500.000">
+			<product id=0>
+				<name_prt/>
+				<money_prt/>
+				<date_buy/>
+				<time_buy/>
+			</product>
+		</month_product>
+	</user_product>
+</detail_product>
+

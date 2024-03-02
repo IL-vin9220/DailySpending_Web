@@ -1,0 +1,12 @@
+- thêm sp
+- xem sp
+
+- sửa sp -> dialog form sửa
+- xóa sp
+
+- tạo hóa đơn: tạo hóa đơn cho mỗi ngày(mặc định); tháng/ năm
+tên, số hd, mã hd, ngày tạo, list, tổng tiền
+
+- thống kê:
+* date
+* giá -> n sản phẩm giá cao nhất/ thấp nhất
