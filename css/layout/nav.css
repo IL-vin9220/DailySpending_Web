@@ -25,8 +25,23 @@
     margin-top: 5px;
 }
 
+.login-account>.avatar{
+    width: 30px;
+    height: 30px;
+    background-color: lightseagreen;
+    border-radius: 50%;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 7px;
+    box-sizing: border-box;
+}
+
+.login-account>.username{
+    margin-left: 10px;
+}
+
 .login-account:hover{
-    background-color:  rgb(11, 120, 188);
+    background-color:  rgba(192, 192, 192, 0.73);
     cursor: pointer;
 }
 
@@ -65,5 +80,5 @@
 }
 
 .nuclear:hover{
-    background-color:  rgb(11, 120, 188);
+    background-color:  rgba(192, 192, 192, 0.73);
 }

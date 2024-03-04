@@ -11,6 +11,12 @@
 .toolbar-left{
     width: 45%;
     height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.toolbar-left>.more-infor{
+    margin-left: 10px;
 }
 
 .toolbar-left>.search-product{
@@ -18,7 +24,7 @@
     height: 35px;
     border-radius: 15px 15px 15px 15px;
     background-color: rgb(255, 255, 255);
-    margin-top: 7.5px;
+    /* margin-top: 7.5px; */
     display: flex;
     align-items: center;
     padding-left: 10px;
@@ -35,12 +41,20 @@
     align-items: center;
 }
 
-.multi-delete{
+/* .filter{
     width: 50px;
     height: 50px;
     background-color: lightcoral;
     cursor: pointer;
 }
+
+.multi-delete{
+    width: 50px;
+    height: 50px;
+    background-color: lightcoral;
+    cursor: pointer;
+    margin-left: 10px;
+} */
 
 .add-new-product{
     width: 110px;
@@ -51,6 +65,14 @@
     background-color: rgb(56, 220, 10);
     padding: 0 5px 0 0;
     cursor: pointer;
+}
+
+.add-new-product>.icon{
+    color: white;
+}
+
+.add-new-product>.name{
+    color: white;
 }
 
 .main-content{

@@ -3,5 +3,11 @@
     height: 30px;
     margin: 5px 5px 5px 5px;
     cursor: pointer;
-    background-color: yellow;
+    text-align: center;
+    padding-top: 5px;
+    box-sizing: border-box;
+}
+
+.icon>.fi{
+    font-size: 20px;
 }

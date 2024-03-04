@@ -6,7 +6,7 @@
     height: 60px;
     padding: 0 20px 0 20px;
     box-sizing: border-box;
-    background-color: rgb(235, 235, 235);
+    /* background-color: rgb(235, 235, 235); */
 }
 
 .header-content-manage>.toolbar-left{
@@ -18,7 +18,7 @@
     width: 100%;
     height: 35px;
     border-radius: 15px 15px 15px 15px;
-    margin-top: 12.5px;
+    /* margin-top: 12.5px; */
     display: flex;
     align-items: center;
     background-color: aliceblue;
@@ -34,7 +34,7 @@
 }
 
 .header-content-manage>.toolbar-right{
-    width: 45%;
+    /* width: 45%; */
     height: 100%;
     display: flex;
     align-items: center;
@@ -97,7 +97,6 @@
 .main-content-manage>.style-grid{
     width: 100%;
     height: 100%;
-    margin-top: 20px;
     box-sizing: border-box;
     overflow-y:auto;
     display: flex;
@@ -178,9 +177,96 @@
     top: 20px;
     right: 0;
     cursor: pointer;
+    color: rgb(225, 225, 225);
     display: none;
 }
 
 .main-content-manage>.style-grid>.bill-grid:hover>.more-option-bill{
+    display: block;
+}
+
+.main-content-manage>.style-detail{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y:auto;
+    margin: 10px 0 0 10px;
+    display: none;
+}
+
+.main-content-manage>.style-detail>.bill-detail{
+    width: 60%;
+    height: 50px;
+    background-color: rgb(235, 235, 235);
+    margin: 10px 0 0 10px;
+    border-radius: 25px 25px 25px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px 5px 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.main-content-manage>.style-detail>.bill-detail>.billtlbar-left{
+    display: flex;
+
+}
+
+.main-content-manage>.style-detail>.bill-detail>.billtlbar-left>.billName{
+    font-weight: bold;
+    /* font-size: 18px; */
+}
+
+.main-content-manage>.style-detail>.bill-detail>.billtlbar-left>.wrap-bill{
+    display: flex;
+    margin-left: 10px;
+    /* align-items: center; */
+}
+
+.main-content-manage>.style-detail>.bill-detail>.billtlbar-left>.wrap-bill>.billCode{
+    display: flex;
+}
+
+.main-content-manage>.style-detail>.bill-detail>.billtlbar-left>.wrap-bill>.billCode>.value{
+    margin-left: 5px;
+}
+
+.main-content-manage>.style-detail>.bill-detail>.billtlbar-left>.wrap-bill>.billDate{
+    display: flex;
+    margin-left: 10px;
+}
+
+.main-content-manage>.style-detail>.bill-detail>.billtlbar-left>.wrap-bill>.billDate>.value{
+    margin-left: 5px;
+}
+
+.main-content-manage>.style-detail>.bill-detail>.billtlbar-right{
+    display: flex;
+    position: relative;
+}
+
+.main-content-manage>.style-detail>.bill-detail>.billtlbar-right>.totalCost{
+    display: flex;
+}
+
+.main-content-manage>.style-detail>.bill-detail>.billtlbar-right>.totalCost>.value{
+    margin-left: 5px;
+}
+
+.main-content-manage>.style-detail>.bill-detail>.billtlbar-right>.more-option-billDetail{
+    width: 30px;
+    height: 30px;
+    background-color: rgba(192, 192, 192, 0.731);
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: -5px;
+    color: rgb(225, 225, 225);
+    display: none;
+}
+
+.main-content-manage>.style-detail>.bill-detail:hover.bill-detail>.billtlbar-right>.more-option-billDetail{
     display: block;
 }

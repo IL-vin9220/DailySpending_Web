@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chitieuhangngay</title>
     <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../assest/uicons-regular-straight/css/uicons-regular-straight.css">
 </head>
 <script src="../../js/index.js"></script>
 <body>
@@ -12,19 +13,19 @@
         <div class="nav">
             <a href="../../index.html" class="link-home">
                 <div class="parent-title">
-                    <div class="icon"></div>
+                    <div class="icon"><i class="fi fi-rs-home"></i></div>
                     <div class="name">Home</div>
                 </div>
             </a>
             <ul class="menu">
                 <div class="parent-title">
-                    <div class="icon"></div>
+                    <div class="icon"><i class="fi fi-rs-business-time"></i></div>
                     <div class="name">Quản lý</div>
                 </div>
                 <li class="sub-menu">
                     <a href="./components/layout/addNew.html">
                         <div class="nuclear">
-                            <div class="icon"></div>
+                            <div class="icon"><i class="fi fi-rs-apps-add"></i></div>
                             <div class="name">Thêm Sản Phẩm</div>
                         </div>
                     </a>
@@ -32,22 +33,22 @@
                 <li class="sub-menu">
                     <a href="./manageBill.html">
                         <div class="nuclear">
-                            <div class="icon"></div>
+                            <div class="icon"><i class="fi fi-rs-file-invoice"></i></div>
                             <div class="name">Quản Lý Hóa Đơn</div>
                         </div>
                     </a>
                 </li>
-                <li class="sub-menu">
+                <!-- <li class="sub-menu">
                     <a href="./thongKe.html">
                         <div class="nuclear">
                             <div class="icon"></div>
                             <div class="name">Thống Kê</div>
                         </div>
                     </a>
-                </li>
+                </li> -->
             </ul>
-            <div class="login-account">
-                <div class="avatar"></div>
+            <div class="login-account" onclick="GetDataFromClient()">
+                <div class="avatar">DN</div>
                 <div class="username">Dung Nguyen</div>
             </div>
         </div>
@@ -56,13 +57,15 @@
                 <div class="toolbar-left">
                     <div class="search-product">
                         <input type="text" class="input inputSearch" id="input" placeholder="Tìm kiếm sản phẩm...">
-                        <div class="icon"></div>
+                        <div class="icon"><i class="fi fi-rs-search"></i></div>
                     </div>
+                    <div class="icon more-infor" title="Sử dụng HashTag để tìm mã. Ví dụ #A123"><i class="fi fi-rs-info"></i></div>
                 </div>
                 <div class="toolbar-right">
-                    <div class="multi-delete" title="Xóa sản phẩm"></div>
+                    <div class="icon filter" title="Lọc sản phẩm"><i class="fi fi-rs-filter"></i></div>
+                    <div class="icon multi-delete" title="Xóa sản phẩm"><i class="fi fi-rs-trash"></i></div>
                     <div class="add-new-product" onclick="displayDetailProduct()">
-                        <div class="icon"></div>
+                        <div class="icon"><i class="fi fi-rs-add"></i></div>
                         <div class="name">Thêm Mới</div>
                     </div>
                 </div>
@@ -72,376 +75,410 @@
                     <div class="tb-head">
                         <div class="wrap-first">
                             <input type="checkbox" name="ckb" id="ckb_head" onclick="clickAllCkb()" class="ckb"></input>
-                            <span>STT</span>
+                            <span class="stt">STT</span>
                         </div>
-                        <span>Tên Sản Phẩm</span>
-                        <span>Giá Mua</span>
-                        <span>Thời Điểm</span>
-                        <span>Ngày Mua</span>
+                        <span class="productCode">Mã Sản Phẩm</span>
+                        <span class="productName">Tên Sản Phẩm</span>
+                        <span class="productCost">Giá Mua</span>
+                        <span class="productTime">Thời Điểm</span>
+                        <span class="productDate">Ngày Mua</span>
                     </div>
                     <div class="wrap-body">
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                         <div class="tb-body">
                             <div class="wrap-first">
                                 <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
-                                <span>01</span>
+                                <span class="stt">01</span>
                             </div>
-                            <span>Coca Cola</span>
-                            <span>10.000</span>
-                            <span>Buổi tối</span>
-                            <span>24/02/2024</span>
-                            <span class="more-option" title="Chi Tiết" onclick="displayDetailProduct()">abc</span>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
                         </div>
                     </div>
                 </div>

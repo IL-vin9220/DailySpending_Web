@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chitieuhangngay</title>
     <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../assest/uicons-regular-straight/css/uicons-regular-straight.css">
 </head>
 <script src="../../js/index.js"></script>
 <body>
@@ -12,19 +13,19 @@
         <div class="nav">
             <a href="../../index.html" class="link-home">
                 <div class="parent-title">
-                    <div class="icon"></div>
+                    <div class="icon"><i class="fi fi-rs-home"></i></div>
                     <div class="name">Home</div>
                 </div>
             </a>
             <ul class="menu">
                 <div class="parent-title">
-                    <div class="icon"></div>
+                    <div class="icon"><i class="fi fi-rs-business-time"></i></div>
                     <div class="name">Quản lý</div>
                 </div>
                 <li class="sub-menu">
                     <a href="./addNew.html">
                         <div class="nuclear">
-                            <div class="icon"></div>
+                            <div class="icon"><i class="fi fi-rs-apps-add"></i></div>
                             <div class="name">Thêm Sản Phẩm</div>
                         </div>
                     </a>
@@ -32,19 +33,19 @@
                 <li class="sub-menu">
                     <a href="./manageBill.html">
                         <div class="nuclear">
-                            <div class="icon"></div>
+                            <div class="icon"><i class="fi fi-rs-file-invoice"></i></div>
                             <div class="name">Quản Lý Hóa Đơn</div>
                         </div>
                     </a>
                 </li>
-                <li class="sub-menu">
+                <!-- <li class="sub-menu">
                     <a href="./thongKe.html">
                         <div class="nuclear">
                             <div class="icon"></div>
                             <div class="name">Thống Kê</div>
                         </div>
                     </a>
-                </li>
+                </li> -->
             </ul>
             <div class="login-account">
                 <div class="avatar"></div>
@@ -56,8 +57,9 @@
                 <div class="toolbar-left">
                     <div class="search-bill">
                         <input type="text" class="input inputBill" id="input" placeholder="Tìm kiếm mã hóa đơn...">
-                        <div class="icon"></div>
+                        <div class="icon"><i class="fi fi-rs-search"></i></div>
                     </div>
+                    <div class="icon more-infor" title="Sử dụng HashTag để tìm mã. Ví dụ #A123"><i class="fi fi-rs-info"></i></div>
                 </div>
                 <div class="toolbar-right">
                     <div class="create-bill">
@@ -83,7 +85,7 @@
                 </div>
             </div>
             <div class="main-content-manage">
-                <div class="style-grid" id="style-grid" style="display: none;">
+                <div class="style-grid" id="style-grid">
                     <div class="bill-grid">
                         <div class="billName">Hóa Đơn Chi Tiêu</div>
                         <div class="numberBill">
@@ -110,7 +112,7 @@
                             <div class="name">Tổng Tiền:</div>
                             <div class="value">200.000</div>
                         </div>
-                        <div class="more-option-bill" title="Chi Tiết"></div>
+                        <div class="icon more-option-bill" title="Chi Tiết"><i class="fi fi-rs-circle-ellipsis"></i></div>
                     </div>
                     <div class="bill-grid">
                         <div class="billName">Hóa Đơn Chi Tiêu</div>
@@ -138,7 +140,7 @@
                             <div class="name">Tổng Tiền:</div>
                             <div class="value">200.000</div>
                         </div>
-                        <div class="more-option-bill" title="Chi Tiết"></div>
+                        <div class="icon more-option-bill" title="Chi Tiết"><i class="fi fi-rs-circle-ellipsis"></i></div>
                     </div>
                     <div class="bill-grid">
                         <div class="billName">Hóa Đơn Chi Tiêu</div>
@@ -166,7 +168,7 @@
                             <div class="name">Tổng Tiền:</div>
                             <div class="value">200.000</div>
                         </div>
-                        <div class="more-option-bill" title="Chi Tiết"></div>
+                        <div class="icon more-option-bill" title="Chi Tiết"><i class="fi fi-rs-circle-ellipsis"></i></div>
                     </div>
                     <div class="bill-grid">
                         <div class="billName">Hóa Đơn Chi Tiêu</div>
@@ -194,7 +196,7 @@
                             <div class="name">Tổng Tiền:</div>
                             <div class="value">200.000</div>
                         </div>
-                        <div class="more-option-bill" title="Chi Tiết"></div>
+                        <div class="icon more-option-bill" title="Chi Tiết"><i class="fi fi-rs-circle-ellipsis"></i></div>
                     </div>
                     <div class="bill-grid">
                         <div class="billName">Hóa Đơn Chi Tiêu</div>
@@ -222,7 +224,7 @@
                             <div class="name">Tổng Tiền:</div>
                             <div class="value">200.000</div>
                         </div>
-                        <div class="more-option-bill" title="Chi Tiết"></div>
+                        <div class="icon more-option-bill" title="Chi Tiết"><i class="fi fi-rs-circle-ellipsis"></i></div>
                     </div>
                     <div class="bill-grid">
                         <div class="billName">Hóa Đơn Chi Tiêu</div>
@@ -250,7 +252,7 @@
                             <div class="name">Tổng Tiền:</div>
                             <div class="value">200.000</div>
                         </div>
-                        <div class="more-option-bill" title="Chi Tiết"></div>
+                        <div class="icon more-option-bill" title="Chi Tiết"><i class="fi fi-rs-circle-ellipsis"></i></div>
                     </div>
                     <div class="bill-grid">
                         <div class="billName">Hóa Đơn Chi Tiêu</div>
@@ -278,10 +280,10 @@
                             <div class="name">Tổng Tiền:</div>
                             <div class="value">200.000</div>
                         </div>
-                        <div class="more-option-bill" title="Chi Tiết"></div>
+                        <div class="icon more-option-bill" title="Chi Tiết"><i class="fi fi-rs-circle-ellipsis"></i></div>
                     </div>
                 </div>
-                <div class="style-detail" id="style-detail" style="display: block;">
+                <div class="style-detail" id="style-detail">
                     <div class="bill-detail">
                         <div class="billtlbar-left">
                             <div class="billName">Hóa Đơn Chi Tiêu</div>
@@ -301,6 +303,227 @@
                                 <div class="name">Tổng Tiền:</div>
                                 <div class="value">200.000</div>
                             </div>
+                            <div class="icon more-option-billDetail" title="Chi Tiết"><i class="fi fi-rs-circle-ellipsis"></i></div>
+                        </div>
+                    </div>
+                    <div class="bill-detail">
+                        <div class="billtlbar-left">
+                            <div class="billName">Hóa Đơn Chi Tiêu</div>
+                            <div class="wrap-bill">
+                                <div class="billCode">
+                                    <div class="name">Mã HD:</div>
+                                    <div class="value">BJ0401</div>
+                                </div>
+                                <div class="billDate">
+                                    <div class="name">Ngày Mua:</div>
+                                    <div class="value">26/02/2024</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="billtlbar-right">
+                            <div class="totalCost">
+                                <div class="name">Tổng Tiền:</div>
+                                <div class="value">200.000</div>
+                            </div>
+                            <div class="icon more-option-billDetail" title="Chi Tiết"><i class="fi fi-rs-circle-ellipsis"></i></div>
+                        </div>
+                    </div>
+                    <div class="bill-detail">
+                        <div class="billtlbar-left">
+                            <div class="billName">Hóa Đơn Chi Tiêu</div>
+                            <div class="wrap-bill">
+                                <div class="billCode">
+                                    <div class="name">Mã HD:</div>
+                                    <div class="value">BJ0401</div>
+                                </div>
+                                <div class="billDate">
+                                    <div class="name">Ngày Mua:</div>
+                                    <div class="value">26/02/2024</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="billtlbar-right">
+                            <div class="totalCost">
+                                <div class="name">Tổng Tiền:</div>
+                                <div class="value">200.000</div>
+                            </div>
+                            <div class="icon more-option-billDetail" title="Chi Tiết"><i class="fi fi-rs-circle-ellipsis"></i></div>
+                        </div>
+                    </div>
+                    <div class="bill-detail">
+                        <div class="billtlbar-left">
+                            <div class="billName">Hóa Đơn Chi Tiêu</div>
+                            <div class="wrap-bill">
+                                <div class="billCode">
+                                    <div class="name">Mã HD:</div>
+                                    <div class="value">BJ0401</div>
+                                </div>
+                                <div class="billDate">
+                                    <div class="name">Ngày Mua:</div>
+                                    <div class="value">26/02/2024</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="billtlbar-right">
+                            <div class="totalCost">
+                                <div class="name">Tổng Tiền:</div>
+                                <div class="value">200.000</div>
+                            </div>
+                            <div class="icon more-option-billDetail" title="Chi Tiết"><i class="fi fi-rs-circle-ellipsis"></i></div>
+                        </div>
+                    </div>
+                    <div class="bill-detail">
+                        <div class="billtlbar-left">
+                            <div class="billName">Hóa Đơn Chi Tiêu</div>
+                            <div class="wrap-bill">
+                                <div class="billCode">
+                                    <div class="name">Mã HD:</div>
+                                    <div class="value">BJ0401</div>
+                                </div>
+                                <div class="billDate">
+                                    <div class="name">Ngày Mua:</div>
+                                    <div class="value">26/02/2024</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="billtlbar-right">
+                            <div class="totalCost">
+                                <div class="name">Tổng Tiền:</div>
+                                <div class="value">200.000</div>
+                            </div>
+                            <div class="icon more-option-billDetail" title="Chi Tiết"><i class="fi fi-rs-circle-ellipsis"></i></div>
+                        </div>
+                    </div>
+                    <div class="bill-detail">
+                        <div class="billtlbar-left">
+                            <div class="billName">Hóa Đơn Chi Tiêu</div>
+                            <div class="wrap-bill">
+                                <div class="billCode">
+                                    <div class="name">Mã HD:</div>
+                                    <div class="value">BJ0401</div>
+                                </div>
+                                <div class="billDate">
+                                    <div class="name">Ngày Mua:</div>
+                                    <div class="value">26/02/2024</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="billtlbar-right">
+                            <div class="totalCost">
+                                <div class="name">Tổng Tiền:</div>
+                                <div class="value">200.000</div>
+                            </div>
+                            <div class="icon more-option-billDetail" title="Chi Tiết"><i class="fi fi-rs-circle-ellipsis"></i></div>
+                        </div>
+                    </div>
+                    <div class="bill-detail">
+                        <div class="billtlbar-left">
+                            <div class="billName">Hóa Đơn Chi Tiêu</div>
+                            <div class="wrap-bill">
+                                <div class="billCode">
+                                    <div class="name">Mã HD:</div>
+                                    <div class="value">BJ0401</div>
+                                </div>
+                                <div class="billDate">
+                                    <div class="name">Ngày Mua:</div>
+                                    <div class="value">26/02/2024</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="billtlbar-right">
+                            <div class="totalCost">
+                                <div class="name">Tổng Tiền:</div>
+                                <div class="value">200.000</div>
+                            </div>
+                            <div class="icon more-option-billDetail" title="Chi Tiết"><i class="fi fi-rs-circle-ellipsis"></i></div>
+                        </div>
+                    </div>
+                    <div class="bill-detail">
+                        <div class="billtlbar-left">
+                            <div class="billName">Hóa Đơn Chi Tiêu</div>
+                            <div class="wrap-bill">
+                                <div class="billCode">
+                                    <div class="name">Mã HD:</div>
+                                    <div class="value">BJ0401</div>
+                                </div>
+                                <div class="billDate">
+                                    <div class="name">Ngày Mua:</div>
+                                    <div class="value">26/02/2024</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="billtlbar-right">
+                            <div class="totalCost">
+                                <div class="name">Tổng Tiền:</div>
+                                <div class="value">200.000</div>
+                            </div>
+                            <div class="icon more-option-billDetail" title="Chi Tiết"><i class="fi fi-rs-circle-ellipsis"></i></div>
+                        </div>
+                    </div>
+                    <div class="bill-detail">
+                        <div class="billtlbar-left">
+                            <div class="billName">Hóa Đơn Chi Tiêu</div>
+                            <div class="wrap-bill">
+                                <div class="billCode">
+                                    <div class="name">Mã HD:</div>
+                                    <div class="value">BJ0401</div>
+                                </div>
+                                <div class="billDate">
+                                    <div class="name">Ngày Mua:</div>
+                                    <div class="value">26/02/2024</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="billtlbar-right">
+                            <div class="totalCost">
+                                <div class="name">Tổng Tiền:</div>
+                                <div class="value">200.000</div>
+                            </div>
+                            <div class="icon more-option-billDetail" title="Chi Tiết"><i class="fi fi-rs-circle-ellipsis"></i></div>
+                        </div>
+                    </div>
+                    <div class="bill-detail">
+                        <div class="billtlbar-left">
+                            <div class="billName">Hóa Đơn Chi Tiêu</div>
+                            <div class="wrap-bill">
+                                <div class="billCode">
+                                    <div class="name">Mã HD:</div>
+                                    <div class="value">BJ0401</div>
+                                </div>
+                                <div class="billDate">
+                                    <div class="name">Ngày Mua:</div>
+                                    <div class="value">26/02/2024</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="billtlbar-right">
+                            <div class="totalCost">
+                                <div class="name">Tổng Tiền:</div>
+                                <div class="value">200.000</div>
+                            </div>
+                            <div class="icon more-option-billDetail" title="Chi Tiết"><i class="fi fi-rs-circle-ellipsis"></i></div>
+                        </div>
+                    </div>
+                    <div class="bill-detail">
+                        <div class="billtlbar-left">
+                            <div class="billName">Hóa Đơn Chi Tiêu</div>
+                            <div class="wrap-bill">
+                                <div class="billCode">
+                                    <div class="name">Mã HD:</div>
+                                    <div class="value">BJ0401</div>
+                                </div>
+                                <div class="billDate">
+                                    <div class="name">Ngày Mua:</div>
+                                    <div class="value">26/02/2024</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="billtlbar-right">
+                            <div class="totalCost">
+                                <div class="name">Tổng Tiền:</div>
+                                <div class="value">200.000</div>
+                            </div>
+                            <div class="icon more-option-billDetail" title="Chi Tiết"><i class="fi fi-rs-circle-ellipsis"></i></div>
                         </div>
                     </div>
                 </div>
